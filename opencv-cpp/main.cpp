@@ -19,6 +19,14 @@ int main(int argc, char **argv) {
     //ex11_flip_image();
 
     //ex12_draw_image();
-    ex13_chapter3_exercise();
+    //ex13_chapter3_exercise();
+
+    //case_filter_background();
+
+    //ex14_image_read();
+
+    //ex15_mouse_draw_rect();
+
+    ex16_camera_record();
     return 0;
 }

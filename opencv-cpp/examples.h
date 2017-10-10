@@ -6,6 +6,7 @@
 #define OPENCVLEARN_EXAMPLES_H
 #include <opencv2/opencv.hpp>
 
+
 void ex1_show_image();
 void ex2_play_video();
 void ex2_play_video_capture();
@@ -24,4 +25,10 @@ void ex10_alpha_merge();
 void ex11_flip_image();
 void ex12_draw_image();
 void ex13_chapter3_exercise();
+void case_filter_background();
+
+void ex14_image_read();
+void ex15_mouse_draw_rect();
+
+void ex16_camera_record();
 #endif //OPENCVLEARN_EXAMPLES_H
