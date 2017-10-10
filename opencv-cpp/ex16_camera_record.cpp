@@ -13,9 +13,11 @@ void ex16_camera_record() {
     }
 
     cvNamedWindow("Example16", CV_WINDOW_AUTOSIZE);
-    const char *outputFname = "/Users/jemy/Temp/output.m4v";
+
+    char outputFname[100];
+    sprintf(outputFname,"/Users/jemy/Temp/output-%ld.m4v",time(NULL));
     int fourcc = CV_FOURCC('I', 'Y', 'U', 'V');
-    double fps = 25;
+    double fps = 24;
 
     CvVideoWriter *writer = cvCreateVideoWriter(outputFname, fourcc, fps, cvSize(960, 640), 1);
     if (!writer) {
@@ -35,7 +37,7 @@ void ex16_camera_record() {
         cvResize(frame, outFrame);
         cvWriteFrame(writer, outFrame);
         cvReleaseImage(&outFrame);
-        int key = cvWaitKey(40);
+        int key = cvWaitKey(1);
         if (key == 27) {
             break;
         }

@@ -5,6 +5,7 @@
 #ifndef OPENCVLEARN_EXAMPLES_H
 #define OPENCVLEARN_EXAMPLES_H
 #include <opencv2/opencv.hpp>
+#include <time.h>
 
 
 void ex1_show_image();
