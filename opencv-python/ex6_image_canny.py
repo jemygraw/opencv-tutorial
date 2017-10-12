@@ -1,6 +1,6 @@
 import cv2
 
-fname = '/Users/jemy/Documents/qiniu.png'
+fname = '/Users/jemy/Documents/github-avatar.png'
 img = cv2.imread(fname, cv2.CAP_MODE_GRAY)
 cv2.namedWindow('Example6', cv2.WINDOW_AUTOSIZE)
 cv2.imshow('Example6', img)

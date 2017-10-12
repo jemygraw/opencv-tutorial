@@ -17,14 +17,16 @@ void ex16_camera_record() {
     char outputFname[100];
     sprintf(outputFname,"/Users/jemy/Temp/output-%ld.m4v",time(NULL));
     int fourcc = CV_FOURCC('I', 'Y', 'U', 'V');
-    double fps = 24;
+    double fps = 25;
 
     CvVideoWriter *writer = cvCreateVideoWriter(outputFname, fourcc, fps, cvSize(960, 640), 1);
+
     if (!writer) {
         printf("open writer failed");
         cvReleaseCapture(&capture);
         return;
     }
+
     while (1) {
         IplImage *frame = cvQueryFrame(capture);
         if (!frame) {
@@ -37,7 +39,7 @@ void ex16_camera_record() {
         cvResize(frame, outFrame);
         cvWriteFrame(writer, outFrame);
         cvReleaseImage(&outFrame);
-        int key = cvWaitKey(1);
+        int key = cvWaitKey(cvFloor(1000/fps));
         if (key == 27) {
             break;
         }
